@@ -8,8 +8,8 @@ public class StationaryPhone extends AbstractPhone {
     public StationaryPhone() {
     }
 
-    public StationaryPhone(String screenResolution, String color, String type, boolean autoresponder) {
-        super(screenResolution, color);
+    public StationaryPhone(String screenResolution, String color, String name, String type, boolean autoresponder) {
+        super(screenResolution, color, name);
         this.type = type;
         this.autoresponder = autoresponder;
     }
@@ -21,6 +21,11 @@ public class StationaryPhone extends AbstractPhone {
 
     @Override
     public void stopCall() {
+
+    }
+
+    @Override
+    public void checkBattery() {
 
     }
 }

@@ -4,4 +4,5 @@ public interface PhoneInterface {
 
     void startCall();
     void stopCall();
+    void checkBattery();
 }

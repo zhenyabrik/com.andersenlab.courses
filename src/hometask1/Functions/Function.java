@@ -1,24 +1,30 @@
 package hometask1.Functions;
 
+import hometask1.Phone.AbstractPhone;
+import hometask1.Phone.MobilePhone;
+
 import java.util.Scanner;
 
 public class Function {
 
+    AbstractPhone abstractPhone = new MobilePhone();
+    MobilePhone mobilePhone = (MobilePhone)abstractPhone;
+
     public String number;
 
     public String scanNumber() {
-        System.out.print("Введите номер телефона в формате +(380)9XXXXXXXX: ");
+        System.out.print(mobilePhone.ENTERCORRECTNUMBERMESSAGE);
         java.util.Scanner scan = new Scanner(System.in);
         number = scan.next();
-        System.out.println ("Вы ввели номер: " + number);
+        System.out.println (abstractPhone.ENTEREDNUMBERMESSAGE + number);
         return number;
     }
 
     public void validateNumber(String number){
         if (number.length() == 13 && number.startsWith("+380")) {
-            System.out.println("Вы ввели корректный номер");
+            System.out.println(abstractPhone.CORRECTNUMBERMESSAGE);
         }else{
-            System.out.println("Введен не корректный номер, номер телефона должен состоять из 13 символов и содержать код страны (+380)");
+            System.out.println(mobilePhone.UNCORRECTNUMBERMESSAGE);
         }
     }
 }
