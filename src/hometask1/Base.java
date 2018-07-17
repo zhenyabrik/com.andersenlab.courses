@@ -9,9 +9,18 @@ public class Base {
     public static void main(String[] args) {
         MobilePhone mobilePhone = new MobilePhone();
         StationaryPhone stationaryPhone = new StationaryPhone();
-        Function validator = new Function();
+        Function function = new Function();
 
-        /**validate phone number*/
-        validator.validateNumber(validator.scanNumber());
+/**validate phone number*/
+        function.validateNumber(function.scanNumber());
+        System.out.println("===");
+/**average value from array*/
+        function.averageValue();
+        System.out.println("===");
+/**factorial of a number*/
+        function.factorialOfNumber();
+        System.out.println("===");
+/**factorial of a number*/
+        function.fibonacciRow();
     }
 }
