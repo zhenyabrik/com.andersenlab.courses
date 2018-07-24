@@ -11,3 +11,4 @@ public abstract class AbstractShape implements ShapeInterface {
     protected double area;
     protected double perimeter;
 }
+
