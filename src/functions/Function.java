@@ -1,4 +1,4 @@
-package hometask1.Functions;
+package functions;
 
 import hometask1.Phone.AbstractPhone;
 import hometask1.Phone.MobilePhone;
@@ -12,14 +12,22 @@ public class Function {
 
     Random random = new Random();
 
-    public String number;
+    private String StringNumber;
+    private double doubleNumber;
 
     public String scanNumber() {
         System.out.print(mobilePhone.ENTERCORRECTNUMBERMESSAGE);
-        java.util.Scanner scan = new Scanner(System.in);
-        number = scan.next();
-        System.out.println (abstractPhone.ENTEREDNUMBERMESSAGE + number);
-        return number;
+        Scanner scan = new Scanner(System.in);
+        StringNumber = scan.next();
+        System.out.println (abstractPhone.ENTEREDNUMBERMESSAGE + StringNumber);
+        return StringNumber;
+    }
+
+    public double scanDoubleNumber(String message) {
+        System.out.print(message);
+        Scanner scan = new Scanner(System.in);
+        doubleNumber = scan.nextDouble();
+        return doubleNumber;
     }
 
     public void validateNumber(String number){
@@ -72,6 +80,25 @@ public class Function {
         for(int i=0; i< limit; i++){
             System.out.print(series[i] + " ");
         }
+    }
+
+    public static double genDouble(double from, double to) {
+        double tmp = .0f;
+        if (to >= from)
+            tmp = (from + (Math.random() * (to - from)));
+        return tmp;
+    }
+
+//    public static double genDouble(double from, double to) {
+//        double tmp = .0f;
+//        if (to >= from)
+//            tmp = (from + (Math.random() * (to - from)));
+//        return tmp;
+//    }
+
+    public static double genDouble(double from, double to, int precision) {
+        double number = genDouble(from, to);
+        return (double) Math.floor(number * Math.pow(10, precision)) / Math.pow(10, precision);
     }
 }
 
