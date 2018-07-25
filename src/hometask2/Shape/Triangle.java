@@ -7,17 +7,19 @@ public class Triangle extends AbstractShape {
     private double triangleSideC = randomGeometricDouble;
 
     @Override
-    public void calculateArea() {
+    public double calculateArea() {
         System.out.println("Triangle side = " + triangleSideA + " cm.");
         double tempArea;
         tempArea = (Math.sqrt(3) / 4) * Math.pow(triangleSideA, 2);
         area = Math.round(tempArea * 100.0) / 100.0;
         System.out.println("Triangle area = " + area + " cm.2");
+        return area;
     }
 
     @Override
-    public void calculatePerimeter() {
+    public double calculatePerimeter() {
         perimeter = 3 * triangleSideA;
         System.out.println("Triangle perimeter = " + perimeter + " cm.");
+        return perimeter;
     }
 }
