@@ -8,7 +8,7 @@ import hometask2.Shape.Rectangle;
 import hometask2.Shape.Square;
 import hometask2.Shape.Triangle;
 
-public class Base {
+public class BaseClass {
 
     public static void main(String[] args) {
         MobilePhone mobilePhone = new MobilePhone();
